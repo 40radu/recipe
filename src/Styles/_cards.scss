@@ -1,0 +1,97 @@
+.card{
+    @include flex (center, start);
+    flex-direction: column;
+    padding: 0 5px 5px 5px;
+    row-gap: 10px;
+    .rating{
+        @include flex (space-between,center);
+        column-gap: 10px;
+        margin-top: 10px;
+    }
+    h3{
+        @include text-semi-bold;
+        color: var(--blue-secondary);
+
+    }
+}
+
+.card-circle{
+    @include flex (center,center);
+    padding: 10px;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 61px;
+    h4 {
+        font-size: 16px;
+        color: var(--blue-secondary);
+        font-weight: 600;
+    }
+
+}
+
+.card-collection{
+    @include flex(space-between,start);
+    flex-direction: column;
+    row-gap: 10px;
+    padding-bottom: 10px;
+    .cont-bottom{
+        width: 100%;
+        @include flex (space-between, end);
+        h4 {
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--blue-secondary);
+            width: 323px;
+        }
+
+        .descri{
+            border: solid 2px var(--orange-primary);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--orange-primary);
+        }
+    }
+}
+
+.cont-card-mealP{
+    width: 100%;
+    @include flex(end,center);
+    flex-direction: column;
+    row-gap: 33px;
+    h4{
+        font-size: 40px;
+        font-weight: 600;
+        color: var(--blue-secondary);
+    }
+    .cont-form{
+        width: 100%;
+        @include flex (center,start);
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 10px 220px;
+
+        h5{
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--orange-primary);
+        }
+
+        .top , .center , .bottom{
+            width: 100%;
+            padding: 10px;
+            @include flex (space-between, center);
+            column-gap: 40px;
+
+        }
+
+        .cont-btn{
+            width: 100%;
+            @include flex (center,center);
+            column-gap: 10px;
+        }
+
+    }
+
+}

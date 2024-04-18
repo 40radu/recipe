@@ -1,0 +1,210 @@
+.btn-orange {
+    color: var(--white);
+    padding: 17px 32px;
+    border: none;
+    background-color: var(--orange-primary);
+    border-radius: 30px;
+    @include flex (center, center);
+    column-gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+// .btn-orange:hover{
+//     background-color: var(--white);
+//     color: var(--orange-primary);
+// }
+
+.btn-orange.no-radius {
+    border-radius: 0;
+}
+
+.btn-orange.submit{
+    @extend .btn-orange;
+    padding: 10px 50px;
+}
+
+.btn-white {
+   @extend .btn-orange;
+   color: var(--orange-primary);
+   background-color: var(--white);
+}
+
+.btn-log-out{
+    @extend .btn-white;
+    padding: 10px 20px;
+    @include text-normal;
+}
+// .btn-white:hover{
+//     background-color:var(--orange-primary);
+//     color: var(--white);
+// }
+
+
+.btn-categories{
+    @include flex(center,center);
+    padding: 20px 40px;
+    column-gap: 10px;
+    box-shadow: 0 4px 4px 0  rgba(0, 0, 0, 0.25);
+    @include text-semi-bold;
+    color: var(--orange-primary);
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.btn-categories.active{
+    @extend .btn-categories;
+    background-color: var(--orange-30);
+    color: var(--orange-secondary);
+    box-shadow: none;
+}
+
+.btn-private {
+    @include flex(center,center);
+    border: none;
+    padding: 5px 10px;
+    column-gap: 10px;
+    border-radius: 10px;
+    @include text-normal;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--orange-primary);
+    cursor: pointer;
+}
+
+.btn-publics {
+    @extend .btn-private;
+    background-color: var(--green);
+}
+
+.btn-google{
+    width: auto;
+    padding: 10px 70px;
+    @include flex(center,center);
+    column-gap: 20px;
+    border: 1px solid var(--black-50);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.input-search-orange {
+    width: 252px;
+    padding: 17px 20px;
+    @include flex (start, center);
+    column-gap: 10px;
+    border: solid 2px var(--orange-primary);
+    border-radius: 30px;
+
+    &__logo-search{
+        width: 24px;
+        height: 24px;
+        background-image: url(/src/icons/search.svg);
+        background-size: contain;
+    }
+
+    &__input{
+        width: 170px;
+        outline: none;
+        border: none;
+        height: auto;
+    }
+    &__input::placeholder{
+        color: var(--orange-70);
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16.42px;
+    }
+}
+
+.input-search-white{
+    @extend .input-search-orange;
+    background-color: var(--white);
+    border-radius: 10px;
+    border: none;
+
+    &__logo-search{
+        @extend .input-search-orange__logo-search;
+    }
+    &__input{
+       @extend .input-search-orange__input;
+    }
+    &__input::placeholder{
+        @extend .input-search-orange__input;
+    }
+    
+}
+
+.input-orange{
+    border: 2px solid var(--orange-primary);
+    border-radius: 30px;
+    padding: 0 0 0 20px;
+    @include flex(start, center);
+    height: 59px;
+    width: 372px;
+    background-color: transparent;
+}
+
+.input-orange::placeholder{
+    color: var(--gray);
+    @include text-semi-bold;  
+}
+
+
+.input-gray{
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin-bottom: 10px;
+    height: 26px;
+    outline: none;
+    background-color: transparent;
+}
+
+.input-gray::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.input-planners{
+    width: 300px;
+    padding: 17px 10px;
+    border: var(--orange-50) solid 1px;
+    border-radius: 5px;
+    @include flex (center,center);
+    input{
+        width: 250px;
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        outline: none;
+    }
+   
+}
+
+.input-courses{
+    @extend .input-planners;
+    width: 400px;
+    @include flex(space-between, center);
+    input{
+        width: 90%;
+    }
+    input::placeholder{
+        font-size: 14px;
+        color: var(--blue-secondary);
+        font-weight: 400;
+    }   
+}
+
+// .input-courses input::placeholder{
+//     font-size: 14px;
+//     color: var(--blue-secondary);
+//     font-weight: 400;
+// }   

@@ -1,0 +1,172 @@
+.profile-top {
+    width: 100%;
+    @include flex (start, center);
+    flex-direction: column;
+    row-gap: 14px;
+    margin-top: 80px;
+
+
+    &__pict {
+        width: 200px;
+        height: 200px;
+        background-image: url(/src/assets/account-profile.png);
+        background-size: cover;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--blue-secondary);
+    }
+
+    &__descri {
+        width: fit-content;
+        padding: 10px;
+        @include flex (start, center);
+        flex-direction: column;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--blue-secondary);
+            text-align: center;
+        }
+    }
+}
+
+.profile-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 73px;
+
+    .menu-bar {
+        padding: 10px;
+        @include flex (start, start);
+        flex-direction: column;
+        width: fit-content;
+        padding-left: 206px;
+        row-gap: 10px;
+        list-style: none;
+        cursor: pointer;
+
+        &__seen {
+            padding: 10px;
+            @include flex (center, center);
+            column-gap: 10px;
+
+            .cont-icon {
+                width: 24px;
+                height: 24px;
+                background-image: url(/src/icons/chevron-right-blue.svg);
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--blue-secondary);
+            }
+        }
+
+        .link {
+            width: 100%;
+        }
+
+        .link a {
+            width: 100%;
+            padding: 20px 10px;
+            @include flex (space-between, center);
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #F9F9F9;
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--blue-secondary);
+            }
+
+            .cont-icon {
+                width: 24px;
+                height: 24px;
+                background-image: url(/src/icons/chevron-right-blue.svg);
+            }
+        }
+
+        .link a:hover {
+            background-color: var(--orange-20);
+            p {
+                color: var(--orange-primary);
+            }
+            .cont-icon{
+                background-image: url(/src/icons/chevron-right-orange.svg);
+            }
+        }
+
+
+    }
+
+    .menu-bar:hover {
+        width: 100%;
+        padding-right: 255px;
+
+        .menu-bar__seen {
+            p {
+                color: var(--orange-primary);
+            }
+
+            .cont-icon {
+                background-image: url(/src/icons/chevronDownOrange.svg);
+            }
+        }
+    }
+
+    .cont-children{
+        width: 100%;
+        padding: 10px 255px 10px 206px;
+        @include flex (center, center);
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+}
+
+.profile-bottom{
+    width: 100%;
+    padding: 20px 235px;
+    @include flex (center,center);
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 102px;
+    .descri{
+        width: 100%;
+        text-align:left;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--blue-secondary);
+        a{
+            color: var(--orange-primary);
+            text-decoration: none;
+        }
+    }
+
+    .btn-delete {
+        width: fit-content;
+        padding: 17px 32px;
+        background-color: transparent;
+        color: var(--orange-primary);
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .cookies-link {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--blue-secondary);
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+

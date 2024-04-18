@@ -1,0 +1,113 @@
+.create-courses-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 67px 0 35px 0;
+    h5 {
+        color: var(--black-50);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &__btn-back {
+        @include flex (center, center);
+        padding: 10px;
+        column-gap: 10px;
+        // border: 1px  solid;
+        width: fit-content;
+        margin-left: 153px;
+
+        p {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--orange-primary);
+        }
+    }
+
+    .cont-form {
+        padding: 10px 229px;
+        @include flex (center, center);
+        flex-direction: column;
+        row-gap: 50px;
+
+        &__top {
+            width: 100%;
+            padding: 10px;
+            @include flex (space-between, center);
+
+            .left {
+                padding: 10px;
+                @include flex (start, start);
+                flex-direction: column;
+                row-gap: 20px;
+                width: fit-content;
+
+                .under-cont {
+                    padding: 10px;
+                    @include flex(center, start);
+                    flex-direction: column;
+                    row-gap: 5px;
+                }
+            }
+
+            .right {
+                width: fit-content;
+                padding: 10px;
+                @include flex (start, start);
+                flex-direction: column;
+                row-gap: 10px;
+
+                &__top,
+                &__bottom {
+                    padding: 20px 10px;
+                    @include flex (center, start);
+                    flex-direction: column;
+                    row-gap: 5px;
+                    width: fit-content;
+
+                    div {
+                        width: 400px;
+                        height: 100px;
+                        padding: 17px 20px 17px 10px;
+                        border: solid 1px var(--orange-50);
+                        @include flex (space-between, start);
+
+                        .text-area {
+                            width: 90%;
+                            height: 100%;
+                            border: none;
+                            background-color: transparent;
+                            outline: none;
+                        }
+                    }
+
+
+                }
+
+                &__bottom{
+                    button{
+                        padding: 20px;
+                        width: fit-content;
+                        @include flex (start, center);
+                        flex-direction: column;
+                        row-gap: 20px;
+                        border: solid 2px var(--orange-50);
+                        border-radius: 5px;
+                        background-color: var(--white);
+                        p{
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: var(--blue-secondary);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__bottom{
+            width: 100%;
+            @include flex (center, center);
+            column-gap: 10px;
+        }
+    }
+}

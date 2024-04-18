@@ -1,0 +1,75 @@
+.container-login {
+    @include flex (center, center);
+    margin: 77px 0 142px 0;
+
+    &__left {
+        width: 572px;
+        height: 800px;
+        // border: solid 1px black;
+        background-image: url(/src/assets/image-login-sign.png);
+        background-size: cover;
+    }
+
+    &__right {
+        width: 578px;
+        height: 800px;
+        @include flex (center, center);
+        flex-direction: column;
+        background-color: var(--gray-80);
+        border-radius: 0 10px 10px 0;
+        row-gap: 20px;
+
+        a {
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .container-password {
+            position: relative;
+
+            .container-logo {
+                width: 24px;
+                height: 24px;
+                background-image: url(/src/icons/look.svg);
+                position: absolute;
+                right: 11px;
+                top: 0;
+                cursor: pointer;
+            }
+        }
+
+        .link-password {
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--black);
+            width: 206px;
+            @include flex(end, center);
+            text-decoration: underline;
+        }
+
+        .parag {
+            @include flex(center, center);
+            column-gap: 10px;
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--black);
+
+            a {
+                color: var(--green);
+                text-decoration: underline;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.cont-meal-plan {
+    @include flex(start, start);
+    flex-direction: column;
+    row-gap: 92px;
+    padding-top: 73px;
+    background-image: url(/src/assets/meal-planners.png);
+    background-size: cover;
+    width: 100%;
+    height: 1020px;
+
+    &__top {
+        width: 100%;
+        padding: 0 110px;
+        @include flex (center, start);
+        flex-direction: column;
+        row-gap: 34px;
+
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--orange-primary);
+        }
+
+        .cont-btn {
+            @include flex(start, center);
+            column-gap: 10px;
+
+            a {
+                text-decoration: none;
+            }
+
+            a.active {
+                button {
+                    background-color: var(--orange-30);
+                    color: var(--orange-secondary);
+                    box-shadow: none;
+                }
+
+            }
+
+
+
+        }
+
+
+    }
+
+    &__bottom {
+        padding: 0 90px;
+        width: 100%;
+        @include flex(center, start);
+        flex-direction: column;
+        row-gap: 22px;
+
+        p {
+            width: 1020px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--blue-secondary);
+        }
+    }
+
+
+}

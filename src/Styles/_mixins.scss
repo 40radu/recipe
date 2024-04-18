@@ -1,0 +1,18 @@
+@mixin flex($justify, $items) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+    
+}
+
+@mixin text-semi-bold{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18.77px;
+}
+
+@mixin text-normal{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.77px;
+}

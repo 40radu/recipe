@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+@import"mixins";
+@import'components';
+@import'navbar';
+@import'colors';
+@import'login';
+@import'signUp';
+@import'home';
+@import'cards';
+@import'footer';
+@import'categories';
+@import 'meal-planners';
+@import'courses';
+@import'CreateCourses';
+@import'profile';
+@import'profile-children';
+@import 'admin';
+@import'userAdmin';
+
+
+
+
+
+

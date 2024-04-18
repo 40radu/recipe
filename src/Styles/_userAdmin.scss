@@ -1,0 +1,106 @@
+.user-admin {
+    width: 100%;
+    padding: 30px 40px;
+
+    .top {
+        width: 92%;
+        height: fit-content;
+        @include flex (space-between, center);
+
+        // padding: 10px;
+        .left {
+            @include flex (center, center);
+            flex-direction: column;
+
+            // padding: 0 5px;
+            .title {
+                font-size: 30px;
+                font-weight: 600;
+                color: var(--black);
+            }
+
+            .descri {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--black);
+            }
+        }
+
+        .right {
+            width: fit-content;
+            @include flex (center, center);
+            column-gap: 40px;
+
+            .new-user {
+                background-color: var(--orange-primary);
+                border: none;
+                padding: 10px;
+                @include flex (center, center);
+                column-gap: 10px;
+                border-radius: 10px;
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        @include flex (start, start);
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 20px;
+
+        .card-profile {
+            background-color: var(--white);
+            width: fit-content;
+            height: fit-content;
+            border-radius: 30px;
+            padding: 20px 10px;
+            @include flex (start, center);
+            flex-direction: column;
+            row-gap: 10px;
+            max-width: 207px;
+
+            .btn-more {
+                width: 174px;
+                @include flex (end, center);
+            }
+
+            .pict {
+                width: fit-content;
+                @include flex (center, center);
+                flex-direction: column;
+                row-gap: 10px;
+                .name {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color:  var(--black);
+                    text-align: center;
+                }
+            }
+
+            .email , .phone-number{
+                width: fit-content;
+                @include flex (start, center);
+                column-gap: 10px;
+                p{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: var(--black);
+                }
+            }
+
+            .email {
+                min-width: 180px;
+            }
+
+            .phone-number{
+                width: 186px;
+            }
+        }
+    }
+}

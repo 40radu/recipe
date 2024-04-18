@@ -1,0 +1,32 @@
+{
+  "todo": [
+    {
+      "id": "0",
+      "task": "Eating breakfast",
+      "completed": "false"
+    },
+    {
+      "id": "1",
+      "task": "Doing homework",
+      "completed": "false"
+    },
+    {
+      "id": "2",
+      "task": "Go to the market",
+      "completed": "false"
+    },
+    {
+      "id": "fcf1",
+      "task": "Run",
+      "completed": "false"
+    },
+    {
+      "id": "8f06",
+      "first-name": "",
+      "last-name": "",
+      "username": "0",
+      "email": "0",
+      "password": "0"
+    }
+  ]
+}
