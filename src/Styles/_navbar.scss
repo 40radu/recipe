@@ -17,6 +17,7 @@
         height: 120px;
         background-image: url(/src/assets/Logo.png);
         background-size: cover;
+       
     }
 
     .nav-links {
@@ -59,6 +60,8 @@
                 width: 45px;
                 height: 45px;
                 background-image: url(/src/icons/account.svg);
+                border-radius: 50%;
+                cursor: pointer;
             }
 
             .cont-profile:hover{
@@ -79,14 +82,54 @@
         
     }
 
-    @media (max-width:991px) {
-        padding: 20px;
-        flex-wrap: wrap;
-        height: fit-content;
-        column-gap: 10px;
-        justify-content: center;
-    }
+    
+    // @include lg {
+    //     padding:0 20px;
+    //      .section-right .input-search-orange {
+    //         // padding: none;
+    //         width: fit-content;
+    //         border: none;
+    //         input{
+    //             display: none;
+    //         }
+    //     }
+    // }
 
+    // @include md {
+    //     flex-direction: column;
+    //     height: fit-content;
+    // }
+
+
+}
+
+@include lg {
+    .nav-container{
+        padding:0 20px;
+        .section-right .input-search-orange {
+                    // padding: none;
+                    width: fit-content;
+                    border: none;
+                    input{
+                        display: none;
+                    }
+                }
+    }
+}
+
+@include md {
+    .nav-container{
+        // flex-direction: column;
+        height: fit-content;
+        // justify-content: space-between;
+        padding: 0 50px;
+        .logo{
+            margin-top: 20px;
+        }
+        .section-right{
+            display: none;
+        }
+    }
 }
 
 .nav-container.connected{

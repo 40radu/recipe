@@ -304,6 +304,8 @@
   width: 45px;
   height: 45px;
   background-image: url(/src/icons/account.svg);
+  border-radius: 50%;
+  cursor: pointer;
 }
 .nav-container .section-right a .cont-profile:hover {
   background-image: url(/src/icons/account-active.svg);
@@ -311,18 +313,33 @@
 .nav-container .section-right a.active .cont-profile {
   background-image: url(/src/icons/account-active.svg);
 }
-@media (max-width: 991px) {
+
+@media (max-width: 1200px) {
   .nav-container, .nav-container.connected {
-    padding: 20px;
-    flex-wrap: wrap;
-    height: -moz-fit-content;
-    height: fit-content;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
-    justify-content: center;
+    padding: 0 20px;
+  }
+  .nav-container .section-right .input-search-orange, .nav-container .section-right .input-search-white {
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+  }
+  .nav-container .section-right .input-search-orange input, .nav-container .section-right .input-search-white input {
+    display: none;
   }
 }
-
+@media (max-width: 992px) {
+  .nav-container, .nav-container.connected {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0 50px;
+  }
+  .nav-container .logo {
+    margin-top: 20px;
+  }
+  .nav-container .section-right {
+    display: none;
+  }
+}
 .nav-container.connected {
   padding: 0 77px;
 }
@@ -483,6 +500,11 @@
 .container-login__right .parag a {
   color: var(--green);
   text-decoration: underline;
+}
+.container-login__right .login-error {
+  font-size: 13px;
+  color: red;
+  font-weight: 500;
 }
 
 .container-signUp {
@@ -1396,11 +1418,17 @@
   row-gap: 14px;
   margin-top: 80px;
 }
-.profile-top__pict {
+.profile-top label {
   width: 200px;
   height: 200px;
+}
+.profile-top__pict {
+  width: 100%;
+  height: 100%;
   background-image: url(/src/assets/account-profile.png);
   background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .profile-top p {
   font-size: 14px;
@@ -1913,6 +1941,7 @@
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 20px;
+  margin-top: 20px;
 }
 .user-admin .bottom .card-profile {
   background-color: var(--white);

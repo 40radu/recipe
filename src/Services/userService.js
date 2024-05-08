@@ -5,7 +5,7 @@ class UserService extends Http {
         try {
             const res = await this.post("user", {
                 ...data,
-                role: "user"
+                role: "user",
             });
             // const res = await this.post("todo", data);
 

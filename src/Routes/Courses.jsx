@@ -6,6 +6,8 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
+
+
 function Courses() {
 
   const { pathname } = useLocation();
@@ -99,7 +101,7 @@ function Courses() {
       </>
         : ""}
 
-      <Outlet/>
+      <Outlet />
 
     </>
   )

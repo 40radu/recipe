@@ -14,16 +14,16 @@ export default axiosInstance;
 
 axiosInstance.interceptors.response.use((config) => {
 
-    if (localStorage.getItem('token')) {
+    // if (localStorage.getItem('token')) {
 
-    } else {
-        const token = config.data.token;
-        const refreshToken = config.data.refreshToken;
-        const id = config.data.user._id;
-        token ? localStorage.setItem("token", token) : "";
-        refreshToken ? localStorage.setItem("refreshToken", token) : "";
-        id ? localStorage.setItem('id', id):"";
-    }
+    // } else {
+    //     const token = config.data.token;
+    //     const refreshToken = config.data.refreshToken;
+    //     const id = config.data.user._id;
+    //     token ? localStorage.setItem("token", token) : "";
+    //     refreshToken ? localStorage.setItem("refreshToken", token) : "";
+    //     id ? localStorage.setItem('id', id):"";
+    // }
 
     // if (pathname === "/sign") {
 
@@ -63,21 +63,24 @@ axiosInstance.interceptors.response.use((config) => {
     }
 
 
-    if (error.response.status === 401) {
-        alert('Veuillez vérifier vos identifiants')
-        console.log("tsy autoriser")
-    } else {
-        console.log(error.message)
-    }
+    // if (error.response.status === 401) {
+    //     alert('Veuillez vérifier vos identifiants')
+    //     console.log("tsy autoriser")
+    // } else {
+    //     console.log(error)
+    // }
+
+    console.log(error.message)
     
-    return Promise.reject(error);
+    return (error.response);
 })
 
 axiosInstance.interceptors.request.use((resq) => {
 
     if (localStorage.getItem("token")) {
         const token = localStorage.getItem("token");
-        resq.headers.Authorization = `Bearer ${token}`;
+        const refreshToken = localStorage.getItem('refreshToken')
+        resq.headers.Authorization = `Bearer ${refreshToken}`;
     } else {
         console.log('tsy misy token')
     }
@@ -85,5 +88,5 @@ axiosInstance.interceptors.request.use((resq) => {
     return resq;
 }, (error) => {
     console.log(error.message)
-    return Promise.reject(error);
+    return error.response
 })

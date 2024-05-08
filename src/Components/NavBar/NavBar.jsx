@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 function NavBar({ barSearch, login, sign, account, notif, logout, connected }) {
 
     const navigate = useNavigate()
+    const avatar = localStorage.getItem('avatar')
 
     function logOut (){
         localStorage.clear()
@@ -49,7 +50,7 @@ function NavBar({ barSearch, login, sign, account, notif, logout, connected }) {
                 {/* {logout == "true" ? <div onClick={logOut}><Button type={('button')} on text={('Log out')} className={('btn-log-out')} /></div> : ""} */}
                 {logout == "true" ? <Button type={('button')} on text={('Log out')} className={('btn-log-out')} onClick={logOut}/> : ""}
 
-                {account == 'true' ? <NavLink to="profile"> <div className='cont-profile'></div> </NavLink>: ""}
+                {account == 'true' ? <NavLink to="profile"> <img src={avatar} className='cont-profile' ></img> </NavLink>: ""}
                 {notif == 'true' ? <img src="/src/icons/notif.svg" ></img> : ""}
 
             </div>

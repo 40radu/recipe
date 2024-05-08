@@ -27,6 +27,8 @@ import UserAdmin from './Components/Admin/UserAdmin.jsx'
 import { actionSign } from './Routes/Sign_up.jsx'
 import { actionLogin } from './Routes/Login.jsx'
 import { actionProfile } from './Routes/Profile.jsx'
+import { actionCreateCourse } from './Components/CreateCourses/CreateCourses.jsx'
+import { loaderAllUserAdmin } from './Components/Admin/UserAdmin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,9 +40,13 @@ const router = createBrowserRouter([
         element: <PrivateRoute />,
         children: [
           {
+            path: "/",
+            element: <Home />
+          },
+          {
             path: "profile",
             element: <Profile />,
-            action:actionProfile,
+            action: actionProfile,
             children: [{
               path: "info",
               element: <PersonnalInfo />,
@@ -58,10 +64,7 @@ const router = createBrowserRouter([
               element: <FavoriteRecipe />,
             }]
           },
-          {
-            path: "/",
-            element: <Home />
-          },
+
           {
             path: "categories",
             element: <Categories />
@@ -89,9 +92,12 @@ const router = createBrowserRouter([
           {
             path: "courses",
             element: <Courses />,
+            // action: actionCreateCourse,
             children: [{
               path: "create",
-              element: <CreateCourses />
+              element: <CreateCourses />,
+              action: actionCreateCourse,
+
             }]
           },
           {
@@ -103,12 +109,15 @@ const router = createBrowserRouter([
             element: <Contact />
           },
           {
-            path:"admin",
-            element: <Admin/>,
-            children:[
+            path: "admin",
+            element: <Admin />,
+            // loader:loaderAllUserAdmin,  
+            children: [
               {
                 path: "/admin",
-                element:<UserAdmin/>,
+                element: <UserAdmin />,
+                loader: loaderAllUserAdmin,
+
               }
             ]
           }
@@ -119,6 +128,8 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
         action: actionLogin,
+
+
       },
       {
         path: "/sign",

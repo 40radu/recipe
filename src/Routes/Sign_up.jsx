@@ -15,8 +15,14 @@ export async function actionSign({ request }) {
   try {
     // const data = await request.formData();
 
-    const res =await UserService.createUser(data);
+    const res = await UserService.createUser(data);
 
+    const token = res.data.token;
+    const refreshToken = res.data.refreshToken;
+    const id = res.data.data._id;
+    token ? localStorage.setItem("token", token) : "";  
+    refreshToken ? localStorage.setItem("refreshToken", refreshToken) : "";
+    id ? localStorage.setItem('id', id) : "";
 
     // const rest = await fetch("http://localhost:4400/api/user",{
     //   method:"POST",
@@ -28,15 +34,15 @@ export async function actionSign({ request }) {
     // console.log(data);
 
     // const res = await UserService.createUser(data);
-    console.log (res)
+    console.log(res)
     console.log(data)
-    return redirect ('/')
+    return redirect('/')
   } catch (error) {
-      console.error (error.message)
+    console.error(error.message)
   }
 
 
- 
+
 
 
   // const rest = axios.post ("http://localhost:4400/api/user",{ data }).then( async (res)=>{
@@ -50,10 +56,10 @@ export async function actionSign({ request }) {
 
 }
 
-async function exo () {
-  const rsult = await UserService.getAllUsers();
-  console.log (rsult)
-}
+// async function exo () {
+//   const rsult = await UserService.getAllUsers();
+//   console.log (rsult)
+// }
 
 
 function Sign_up() {
@@ -89,7 +95,7 @@ function Sign_up() {
         <p className='link-login' onClick={actionSign}> Already have an account?  <Link to='/login'>Log in</Link>  </p>
         {/* <button type='submit' className='link-login' >Already have an account?  <Link to='/login'>Log in</Link>  </button> */}
 
-          {/* <button onClick={exo}> Cliquez !!</button> */}
+        {/* <button onClick={exo}> Cliquez !!</button> */}
 
       </Form>
 
